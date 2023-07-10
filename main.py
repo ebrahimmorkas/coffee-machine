@@ -1,16 +1,44 @@
-# This is a sample Python script.
+water = 300
+milk = 200
+coffee = 100
+money = 0
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+menu = {
+    "espresso": {
+        "ingredients": {
+            "milk": 100,
+            "water": 50,
+            "coffee": 50
+        },
+        "cost": 100
+    },
 
+    "latte": {
+        "ingredients": {
+            "milk": 50,
+            "water": 100,
+            "coffee": 100
+        },
+        "cost": 200
+    },
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    "cappuccino": {
+        "ingredients": {
+            "milk": 150,
+            "water": 50,
+            "coffee": 150
+        },
+        "cost": 200
+    }
+}
 
+def available_resources():
+    print(f"Water: {water} ml")
+    print(f"Milk: {milk} ml")
+    print(f"Coffee: {coffee} g")
+    print(f"$: {money}")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+while True:
+    user_choice = input("What would you like (espresso/latte/cappuccino) or enter 'report' to know the available ingredients\n")
+    if user_choice == 'report':
+        available_resources()
