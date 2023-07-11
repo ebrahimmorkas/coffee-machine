@@ -47,8 +47,17 @@ def available_resources():
     print(f"Coffee: {coffee} g")
     # print(f"$: {money}")
 
+# Function that will add the resources in the machine
+def add_resource(get_milk, get_water, get_coffee):
+    global milk
+    global water
+    global coffee
+    milk = milk + get_milk
+    water = water + get_water
+    coffee = coffee + get_coffee
+
 while True:
-    user_choice = input("What would you like (espresso/latte/cappuccino) or enter 'report' to know the available ingredients\n")
+    user_choice = input("What would you like (espresso/latte/cappuccino) or enter 'report' to know the available ingredients or enter 'add' to add the resources\n")
     if user_choice == 'report':
         available_resources()
     elif user_choice in available_coffees:
@@ -104,5 +113,11 @@ while True:
         else:
             # Resources are not available
             print("Resources Not available")
+    elif user_choice == 'add':
+        # print("You can add the resources")
+        add_water = int(input("Please enter the amount of water you want to add in ml\n"))
+        add_coffee = int(input("Please enter the amount of coffee you want to add in g\n"))
+        add_milk = int(input("Please enter the amount of milk you want to add in ml\n"))
+        add_resource(add_milk, add_water, add_coffee)
     else:
         print("Coffee not available")
